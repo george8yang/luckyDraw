@@ -1,0 +1,31 @@
+.draw {
+    width: 800px;
+    height: 850px;
+
+}
+/* 更改宽度和边框图片 */
+.main {
+    width: 650px;
+    height: 650px;
+    border-image-repeat: stretch;
+}
+/* 解决lable标签四个字换行问题 */
+.layui-form-label {
+    padding: 9px 9px;
+    width: 83px;
+}
+img {
+    width: 20px;
+}
+#editBady {
+    padding-top: 20px;
+    padding-right: 30px;
+}
+#file{
+    display: none;
+}
+#image{
+    width: 55px;
+    margin-right: 50px;
+
+}

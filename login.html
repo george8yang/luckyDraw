@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运大抽奖</title>
+    <link rel="stylesheet" href="./layui-v2.6.8/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/common.css">
+
+
+</head>
+
+<body>
+    <div class="draw">
+        <h2>幸运抽奖</h2>
+        <div class="header">
+            <span class="total">注册/登录可获200枚矿石！！！</span>
+        </div>
+        <!-- 抽奖面板 -->
+        <div class="main">
+            <div class="layui-card" style="margin: 50px 20px;">
+                <div class="layui-card-body">
+                    <!-- 登录表单 -->
+                    <form class="layui-form" id="form-login" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                                    autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码框</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="password" required lay-verify="required"
+                                    placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">单选框</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" title="管理员">
+                                <input type="radio" name="status" value="0" title="游客" checked>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                                <button type="button" id="form_reguser" class="layui-btn">注册</button>
+                                <a href="./index.html" class="layui-btn  layui-btn-danger quit">退出</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 注册表单 -->
+                    <form class="layui-form"  id="form-reg" action=""style="display: none;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                                    autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">密码框</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="password" required lay-verify="required"
+                                    placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">单选框</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" title="管理员">
+                                <input type="radio" name="status" value="0" title="游客" checked>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit  lay-filter="formDemo">注册</button>
+                                <a href="./index.html" class="layui-btn  layui-btn-danger quit">退出</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./layui-v2.6.8/layui-v2.6.8/layui/layui.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/login.js"></script>
+
+</body>
+
+</html>

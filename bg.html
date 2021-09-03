@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖后台管理</title>
+    <!-- 引入layui -->
+    <link rel="stylesheet" href="./layui-v2.6.8/layui-v2.6.8/layui/css/layui.css">
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- 私有样式 -->
+    <link rel="stylesheet" href="./css/bg.css">
+</head>
+
+<body>
+    <div class="draw">
+        <h2>幸运抽奖</h2>
+        <div class="header">
+            <span class="total">后台管理界面</span>
+        </div>
+        <div class="main">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <!-- 奖品修改部分 -->
+                    <table class="layui-table">
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>奖品名称</th>
+                                <th>奖品图片</th>
+                                <th>奖品数量</th>
+                                <th>操作</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>总计</td>
+                                <td colspan="4"></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- 抽奖设置部分 -->
+                    <form class="layui-form" action="" id="drawset">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">选择大奖</label>
+                            <div class="layui-input-inline">
+                                <select id="big" name="bigprizeId" lay-verify="required">
+                                    <option value="">请选择大奖</option>
+                                </select>
+                            </div>
+                            <label class="layui-form-label">投放时间</label>
+                            <div class="layui-input-inline">
+                                <input type="datetime-local" name="time"   id="setTime" required lay-verify="required"
+                                    autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">总奖品数</label>
+                            <div class="layui-input-inline">
+                                <input type="number" id="prizesum"  name="prizesum" required lay-verify="required" placeholder="请输入奖品总数"
+                                    autocomplete="off" class="layui-input">
+                            </div>
+                            <label class="layui-form-label">中奖概率</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="probability" id="probability" required lay-verify="required" placeholder="请输0~1内的数"
+                                    autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div style="text-align: center;">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">确定</button>
+                                <a href="./index.html" class="layui-btn  layui-btn-primary quit">退出</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 奖品信息模板 -->
+    <script type="text/html" id="prize">
+        <tr>
+            <td>{{id}}</td>
+            <td>{{prizename}}</td>
+            <td><img src={{picture}} alt=""></td>
+            <td>{{number}}</td>
+            <td><button type="button" class="layui-btn layui-btn-xs btn-edit" data-id={{id}}>编辑</button>
+            </td>
+        </tr>
+                            
+    </script>
+    <!-- select标签选项模板 -->
+    <script type="text/html" id="selectprize">
+        <option value={{id}}>{{prizename}}</option>                               
+    </script>
+
+
+    <!-- 编辑弹出层 -->
+    <script type="text/html" id="editForm">
+    <form class="layui-form" id="editBady" action="">
+        <!-- 隐藏域，保存Id的值 -->
+        <input type="hidden" data-id={{id}} />
+        <div class="layui-form-item">
+            <label class="layui-form-label">奖品名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="prizename" value={{prizename}} required lay-verify="required" placeholder="请输入奖品名称"
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">奖品数量</label>
+            <div class="layui-input-block">
+                <input type="number" name="number" value={{number}} required lay-verify="required" placeholder="请输入奖品数量"
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">奖品图片</label>
+            <div class="layui-input-block">
+                <input type="file" id="file" accept="image/png">
+                <img src={{picture}} id="image" alt="">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-sm"
+                    id="btnChooseImage">上传<i class="layui-icon">&#xe67c;</i></button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改</button>
+            </div>
+        </div>
+    </form>
+    </script>
+    <script src="./js/jquery.js"></script>
+    <script src="./layui-v2.6.8/layui-v2.6.8/layui/layui.js"></script>
+    <script src="./js/bg.js"></script>
+</body>
+
+</html>

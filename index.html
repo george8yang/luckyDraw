@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>幸运大抽奖</title>
     <link rel="stylesheet" href="./layui-v2.6.8/layui-v2.6.8/layui/css/layui.css">
-    <link rel="stylesheet" href="./index.css">
-    
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+
 
 </head>
+
 <body>
     <div class="wrapper">
-        <h2>幸运抽奖</h2>
-        <div class="header">
-            <span class="total">当前矿石数：</span> 
-            <span class="total" id="mineral">1000</span>
-            <span id="btnSign_in">签到</span>
-            <span id="btnSigned_in">已签到</span>
+        <!-- 抽奖区域 -->
+        <div class="draw">
+            <h2>幸运抽奖</h2>
+            <!-- 抽奖区头部 -->
+            <div class="header">
+                <span class="total">当前矿石数：</span>
+                <span class="total" id="mineral"></span>
+                <span id="btnSign_in">签到</span>
+                <span id="btnSigned_in">已签到</span>
+            </div>
+            <!-- 抽奖区奖品展示 -->
+            <div class="main">
+                <ul id="prize">
+
+                </ul>
+            </div>
+
         </div>
-        <!-- 抽奖面板 -->
-        <div class="main">
-            <ul>
-                <li>
-                    <img src="./images/矿石.png" alt="">
-                    <span class="title">矿石</span>
-                </li>
-                <li>
-                    <img src="./images/徽章.png" alt="">
-                    <span class="title">随机限量徽章</span>
-                </li>
-                <li>
-                    <img src="./images/T恤.png" alt="">
-                    <span class="title">掘金新款T恤</span>
-                </li>
-                <li>
-                    <img src="./images/Bug.png" alt="">
-                    <span class="title">Bug</span>
-                </li>
-                <li id="btnDraw">
-                    <h4>抽奖</h4>
-                    <span class="title">200矿石/次</span>
-                </li>
-                <li>
-                    <img src="./images/乐高海洋巨轮.png" alt="">
-                    <span class="title">乐高海洋巨轮</span>
-                </li>
-                <li>
-                    <img src="./images/桌垫.png" alt="">
-                    <span class="title">掘金限量桌垫</span>
-                </li>
-                <li>
-                    <img src="./images/抱枕.png" alt="">
-                    <span class="title">Yoyo抱枕</span>
-                </li>
-                <li>
-                    <img src="./images/Switch.png" alt="">
-                    <span class="title">Switch</span>
-                </li>
-            </ul>
+        <div id="split"></div>
+        <!-- 中奖记录展示区域 -->
+        <div class="show">
+            <h2>中奖记录</h2>
+
+            <div class="statistics">
+                <ul id="prizeList">
+
+                </ul>
+
+            </div>
+            <img src="./images/test.png" alt="">
         </div>
     </div>
+    <!-- 奖品布局模板 -->
+    <script type="text/html" id="tpl-prize">
+            <li >
+                <img src={{picture}} alt="">
+                <span class="title">{{prizename}}</span>
+            </li>
+    </script>
+    <!-- 引入jquery.js -->
+    <script src="./js/jquery.js"></script>
+    <!-- 引入layui.js -->
     <script src="./layui-v2.6.8/layui-v2.6.8/layui/layui.js"></script>
-    <script src="./index.js"></script>
-    
+    <script src="./js/index.js"></script>
 </body>
+
 </html>

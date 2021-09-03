@@ -1,0 +1,126 @@
+/* 容器 */
+.wrapper {
+    display: flex;
+    width: 1124px;
+    height: 561px;
+    margin: 0px auto;
+}
+/* 签到、已签到公共样式 */
+#btnSign_in,#btnSigned_in {
+    float: right;
+    cursor: pointer;
+    width: 96px;
+    height: 40px;
+    background-color: #8098d4;
+    border-radius: 40px;
+    text-align: center;
+    color: #cbefff;
+}
+#btnSign_in:hover {
+    color: #e9b183;
+}
+#btnSigned_in {
+    display: none;    
+    background-color: #6f8cd4;
+    color: #bbd0f4;
+}
+/* 主体九宫格布局 */
+.main ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 10px solid #da7624;
+    background-color: #da7624;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main li {
+    display: flex;
+    width: 129px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #fdf3f3;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.main li img {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.title {
+    cursor: default;
+    font-size: 14px;
+    color: #d25f00;
+    ;
+}
+/* 抽奖按钮 */
+.main li h4 {
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #a74b00;
+}
+
+.draw ul li:nth-child(5) {
+    cursor: pointer;
+    background: #ffe6a6;
+    box-shadow: inset 0 0 16px #ffa800;
+}
+/* 动画样式，改变背景 */
+#prize .animation {
+    background-color: #e6cf95;
+    box-shadow: inset 0 0 16px #ffa800;
+}
+
+/* 中奖记录模块 */
+.show {
+    position: relative;
+    margin-left: 1px;
+    width: 500px;
+}
+.show img{
+    position:absolute;
+    bottom: -30px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+
+}
+.statistics {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translate(-50%);
+}
+/* 中奖记录展示区 */
+.statistics ul {
+    cursor: default;
+    width: 400px;
+    height: 200px;
+    padding: 10px 10px;
+    background: rgba(255, 247, 232, .3);
+    border-radius: 10px;
+    color: #e0edfa;
+    /* 隐藏超出部分 */
+    overflow:auto;
+}
+/* 中奖时间 */
+.statistics li span{
+    float: right;
+}
+.statistics i{
+    font-style: normal;
+    color: #d25f00;
+}

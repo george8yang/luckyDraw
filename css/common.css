@@ -1,0 +1,62 @@
+/* 初始化样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+/* 主体盒子 */
+.draw,
+.show {
+    position: relative;
+    width: 624px;
+    height: 561px;
+    padding-top: 31px;
+    /* 居中 */
+    margin: 100px auto;
+    background-color: #3a6af0;
+}
+/* 标题部分 */
+h2 {
+    position: relative;
+    cursor: default;
+    margin-left: 60px;
+    font-weight: 400;
+    color: #cae2f9;
+}
+h2::before {
+    position: absolute;
+    top: 5px;
+    left: -23px;
+    content: '';
+    width: 10px;
+    height: 24px;
+    border-radius: 10px;
+    background-color: #d97427;
+}
+/* 主体头部部分 */
+.header {
+    width: 507px;
+    height: 40px;
+    margin: 10px 0 16px 48px;
+    line-height: 40px;
+    color: #cbefff
+}
+/* 主体body部分 */
+.main {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 486px;
+    height: 394px;
+    background-color: #f3da95;
+    border: 25px solid transparent;
+    /* 边框图片 */
+    /* border-image-source: url(./images/border.png);
+    border-image-slice:21;
+    border-image-width: 24px;
+    border-image-repeat: repeat; */
+    /* 可简写 */
+    border-image: url(/images/border.png) 21/24px;
+
+}
